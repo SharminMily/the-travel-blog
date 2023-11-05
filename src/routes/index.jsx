@@ -5,6 +5,7 @@ import AllBlogs from "../page/AllBlogs/AllBlogs"
 import Wishlist from "../page/Wishlist/Wishlist"
 import Login from "../page/Login";
 import Register from "../page/Register";
+import Home from "../page/Home";
 
 
 const routes = createBrowserRouter([
@@ -12,6 +13,10 @@ const routes = createBrowserRouter([
       path: "/",
       element: <App></App>,
       children: [
+        {
+         index: true,
+          element: <Home></Home>
+        },
         {
           path: "addBlog",
           element: <AddBlog></AddBlog>
