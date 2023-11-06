@@ -6,12 +6,14 @@ import Wishlist from "../page/Wishlist/Wishlist"
 import Login from "../page/Login";
 import Register from "../page/Register";
 import Home from "../page/Home";
+import ErrorPage from "../page/ErrorPage";
 
 
 const routes = createBrowserRouter([
     {
       path: "/",
       element: <App></App>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
          index: true,

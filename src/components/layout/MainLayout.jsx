@@ -27,7 +27,7 @@ const MainLayout = ({ children }) => {
                                 <Navbar></Navbar>
                             </div>
                         </div>
-                        <div className='ml-52 mr-4'>
+                        <div className='md:ml-52 mr-4'>
                             <button className='btn'>X</button>
                             <NavLink to="/login"
                                 className={({ isActive }) => isActive ? 'btn btn-primary btn-sm' : 'btn btn-ghost btn-sm text-blue-700 text-xl normal-case'}>LogIn</NavLink>
