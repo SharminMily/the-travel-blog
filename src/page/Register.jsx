@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import useAuth from '../hooks/useAuth';
 import SocialLogin from './SocialLogin';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const [showPassword, setPassword] = useState(false)
@@ -20,6 +21,7 @@ const Register = () => {
         try{
             await createUser(email, password)
             console.log('Create', user)
+            toast.success('Successfully create user!')
          }
          catch(err) {
              console.log(err)

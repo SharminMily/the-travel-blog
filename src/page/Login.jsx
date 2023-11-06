@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import useAuth from '../hooks/useAuth';
 import SocialLogin from './SocialLogin';
+import toast from 'react-hot-toast';
 
 const Login = () => {
     const [showPassword, setPassword] = useState(false)
-    const {login, user } = useAuth()
+    const {login, user } = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleSubmit = async(e) => {
         e.preventDefault()      
@@ -14,10 +17,19 @@ const Login = () => {
         const password = e.target.password.value
         console.log('hello', email, password)
 
+         // validation
+         if (password.length < 6) {
+            toast.error("Please must be at least 6 characters")
+            return;
+        }
+
         
         try{
             await login(email, password)
-            console.log('login', user)
+            // console.log('login', user)
+            toast.success('Successfully login!')
+            // return <Navigate state={location.pathname} to='/' replace></Navigate>
+            navigate(location?.state? location.state : '/')
          }
          catch(err) {
              console.log(err)

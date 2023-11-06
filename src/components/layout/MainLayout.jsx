@@ -2,14 +2,19 @@ import React from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const MainLayout = ({ children }) => {
+    const { user, logout, loader } = useAuth();
+    console.log(user)
+
+
     return (
         <div className="drawer">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* Navbar */}
-                <div className="w-full navbar bg-blue-50 ">
+                <div className="w-full navbar bg-blue-700 text-white">
                     <div className=" w-full max-w-[1200px] mx-auto">
                         <div className="">
                             <div className="flex-none lg:hidden">
@@ -27,10 +32,33 @@ const MainLayout = ({ children }) => {
                                 <Navbar></Navbar>
                             </div>
                         </div>
-                        <div className='md:ml-52 mr-4'>
-                            <button className='btn'>X</button>
+                        <div className='md:ml-52 mr-4 '>
+                            {/* <button className='btn'>X</button> */}
+                            { user?.email ? <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 rounded-full">
+                            <img src={user.photoURL} alt={user.displayName} />
+                        </div>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white text-black hover:text-black rounded-box w-52">
+                        <li>
+                        <button className='btn btn-sm  text-blue-600 hover:text-black'>Name:{user?.displayName} </button>
+                            <button className="btn btn-sm  btn-ghost hover:text-black">{user?.displayName || user?.email}</button>
+
+                        </li>
+                        <li>                           
+                            <button onClick={logout}
+                                className="btn btn-sm  btn-ghost hover:text-black">Logout</button>
+
+                        </li>
+                    </ul>
+                </div>
+                :
+                <NavLink to="/register"><a className="btn btn-sm ">register</a></NavLink>
+                    }
+{/*          
                             <NavLink to="/login"
-                                className={({ isActive }) => isActive ? 'btn btn-primary btn-sm' : 'btn btn-ghost btn-sm text-blue-700 text-xl normal-case'}>LogIn</NavLink>
+                                className={({ isActive }) => isActive ? 'btn btn-primary btn-sm' : 'btn btn-ghost btn-sm text-blue-700 text-xl normal-case'}>LogIn</NavLink> */}
                         </div>
                     </div>
                 </div>
