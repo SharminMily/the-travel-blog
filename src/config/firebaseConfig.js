@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBx7l4H8I48V-a7XZn02mLLp8v1UGr_1mY",
-  authDomain: "travel-blog-fd253.firebaseapp.com",
-  projectId: "travel-blog-fd253",
-  storageBucket: "travel-blog-fd253.appspot.com",
-  messagingSenderId: "718994086824",
-  appId: "1:718994086824:web:f0de08a5487a4ca781db9d"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase

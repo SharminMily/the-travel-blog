@@ -42,7 +42,7 @@ const MainLayout = ({ children }) => {
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white text-black hover:text-black rounded-box w-52">
                         <li>
-                        <button className='btn btn-sm  text-blue-600 hover:text-black'>Name:{user?.displayName} </button>
+                        <button className='btn btn-sm  text-blue-600 hover:text-black'>Name: {user?.displayName} </button>
                             <button className="btn btn-sm  btn-ghost hover:text-black">{user?.displayName || user?.email}</button>
 
                         </li>

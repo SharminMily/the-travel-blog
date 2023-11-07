@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import useAuth from '../hooks/useAuth';
 import SocialLogin from './SocialLogin';
@@ -7,7 +7,9 @@ import toast from 'react-hot-toast';
 
 const Register = () => {
     const [showPassword, setPassword] = useState(false)
-    const {createUser, user } = useAuth()
+    const {createUser, user,  handleUpdateProfile } = useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleSubmit = async(e) => {
         e.preventDefault()
@@ -21,11 +23,17 @@ const Register = () => {
         try{
             await createUser(email, password)
             console.log('Create', user)
-            toast.success('Successfully create user!')
+            toast.success('Successfully create user!')    
+            handleUpdateProfile(name, img)
+            console.log(name, img)        
+            navigate(location?.state? location.state : '/')
+           
          }
          catch(err) {
-             console.log(err)
+            toast.error(err.message)
          }
+         
+     
     }
 
 

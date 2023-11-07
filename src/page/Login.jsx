@@ -32,7 +32,7 @@ const Login = () => {
             navigate(location?.state? location.state : '/')
          }
          catch(err) {
-             console.log(err)
+            toast.error(err.message)
          }
     }
 
