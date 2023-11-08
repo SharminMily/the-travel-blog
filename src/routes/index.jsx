@@ -7,6 +7,7 @@ import Login from "../page/Login";
 import Register from "../page/Register";
 import Home from "../page/Home";
 import ErrorPage from "../page/ErrorPage";
+import FeatureBlog from "../page/FeatureBlog/FeatureBlog";
 
 
 const routes = createBrowserRouter([
@@ -29,9 +30,13 @@ const routes = createBrowserRouter([
           // loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.id}`)
         },
         {
-          path: "wishList/:id",
+          path: "wishList",
           element: <Wishlist></Wishlist>,
-          loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.id}`)
+          // loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.id}`)
+        },
+        {
+          path: "featureBlog",
+          element: <FeatureBlog></FeatureBlog>
         },
       ]
     },

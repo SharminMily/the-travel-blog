@@ -1,9 +1,41 @@
-import React from 'react';
+// import React, { useEffect, useState } from 'react';
 import { FaPenNib } from 'react-icons/fa';
 
-const AddBlogCard = ({ blog }) => {   
+const AddBlogCard = ({ blog }) => {
     const { _id, title, date, category_name, country_name, description, long_description, image } = blog;
-    console.log(blog)
+    // console.log(blog)
+
+    const handleAddToWishlist = () => {
+        // console.log(blog)
+        const addWishlistArray = [];
+
+        const wishlistItem = JSON.parse(localStorage.getItem('blog'));
+        if (!wishlistItem) {
+            addWishlistArray.push(blog);
+            localStorage.setItem('blog', JSON.stringify(addWishlistArray))
+            alert("Good job!", "blog added successfully!", "success");
+        }
+        else {
+            const isExits = wishlistItem.find((blog) => blog._id === _id)
+
+            if (!isExits) {
+                addWishlistArray.push(...wishlistItem, blog)
+                localStorage.setItem('blog', JSON.stringify(addWishlistArray))
+               alert("Good job!", "blog added successfully!", "success");
+            }
+            else {
+               alert("Error!", "No duplicate !", "error");
+            }
+
+
+        }
+
+    }
+
+
+    // const handleWishlist = (blog) => {
+    //     console.log(blog)
+    // }
 
     return (
         <div>
@@ -28,16 +60,18 @@ const AddBlogCard = ({ blog }) => {
 
                     <div className="flex gap-2">
                         <button onClick={() => document.getElementById(_id).showModal()} className='btn bg-blue-700 text-white hover:bg-black '>More Details</button>
-                        <button className='btn  btn-outline btn-primary hover:btn-black '>wishlist</button>
+
+                        {/* details button */}
+                        <button onClick={handleAddToWishlist} className='btn  btn-outline btn-primary hover:btn-black '>wishlist</button>
                     </div>
                 </div>
-                <figure><img src={image} alt="Shoes" /></figure>
+                <figure><img className='w-full h-72' src={image} alt="Shoes" /></figure>
             </div>
 
             {
                 <dialog id={_id} class="modal modal-bottom sm:modal-middle">
                     <form method="dialog" class="modal-box ">
-                      
+
                         <div class="card bg-base-100 rounded-lg">
                             <figure class="px-10 pt-10">
                                 <img src={image} alt="Shoes" class="rounded-xl" />
@@ -70,7 +104,7 @@ const AddBlogCard = ({ blog }) => {
                             </div>
                         </div>
                         <div class="modal-action flex justify-center">
-                            <button class="btn btn-outline btn-error">Close</button>                            
+                            <button class="btn btn-outline btn-error">Close</button>
                         </div>
                     </form>
                 </dialog>

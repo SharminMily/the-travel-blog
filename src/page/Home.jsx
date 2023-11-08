@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer';
 import RecentBog from '../components/RecentBog/RecentBog';
 import NewsLetter from '../components/NewsLetter/NewsLetter';
 import Country from '../components/Country/Country';
+import InfoImage from '../components/InfoImage/InfoImage';
 
 const Home = () => {
 
@@ -36,6 +37,7 @@ const Home = () => {
 
                 <RecentBog></RecentBog>
                 <NewsLetter></NewsLetter>
+                <InfoImage></InfoImage>
             </div>
             <Footer></Footer>
         </div>
