@@ -1,4 +1,5 @@
 // import React, { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { FaPenNib } from 'react-icons/fa';
 
 const AddBlogCard = ({ blog }) => {
@@ -13,7 +14,7 @@ const AddBlogCard = ({ blog }) => {
         if (!wishlistItem) {
             addWishlistArray.push(blog);
             localStorage.setItem('blog', JSON.stringify(addWishlistArray))
-            alert("Good job!", "blog added successfully!", "success");
+            toast.success("added!", "blog added successfully!", "success");
         }
         else {
             const isExits = wishlistItem.find((blog) => blog._id === _id)
@@ -21,10 +22,10 @@ const AddBlogCard = ({ blog }) => {
             if (!isExits) {
                 addWishlistArray.push(...wishlistItem, blog)
                 localStorage.setItem('blog', JSON.stringify(addWishlistArray))
-               alert("Good job!", "blog added successfully!", "success");
+               toast.success("added!", "blog added successfully!", "success");
             }
             else {
-               alert("Error!", "No duplicate !", "error");
+               toast.error("already added!", "No duplicate !", "error");
             }
 
 

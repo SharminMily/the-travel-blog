@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import WishlistCart from './WishlistCart';
+import toast from 'react-hot-toast';
 
 const Wishlist = () => {
     const [blog, setBlog] = useState([]);
@@ -23,6 +24,7 @@ const Wishlist = () => {
         localStorage.clear()
         setBlog([]);
         setNoFound(' No Blog Found')
+        toast.success("delete successfully")
 
     }
 

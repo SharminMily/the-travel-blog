@@ -29,7 +29,7 @@ const Login = () => {
             // console.log('login', user)
             toast.success('Successfully login!')
             // return <Navigate state={location.pathname} to='/' replace></Navigate>
-            navigate(location?.state? location.state : '/')
+            navigate(location?.state?  location.state : '/')
          }
          catch(err) {
             toast.error(err.message)

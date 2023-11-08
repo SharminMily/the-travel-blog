@@ -8,6 +8,7 @@ import Register from "../page/Register";
 import Home from "../page/Home";
 import ErrorPage from "../page/ErrorPage";
 import FeatureBlog from "../page/FeatureBlog/FeatureBlog";
+import PrivateRouter from "../page/PrivateRouter/PrivateRouter";
 
 
 const routes = createBrowserRouter([
@@ -22,16 +23,16 @@ const routes = createBrowserRouter([
         },
         {
           path: "addBlog",
-          element: <AddBlog></AddBlog>
+          element: <PrivateRouter><AddBlog></AddBlog></PrivateRouter>
         },
         {
           path: "allBlogs",
-          element: <AllBlogs></AllBlogs>,
+          element: <PrivateRouter><AllBlogs></AllBlogs></PrivateRouter>,
           // loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.id}`)
         },
         {
           path: "wishList",
-          element: <Wishlist></Wishlist>,
+          element: <PrivateRouter><Wishlist></Wishlist></PrivateRouter>,
           // loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.id}`)
         },
         {
