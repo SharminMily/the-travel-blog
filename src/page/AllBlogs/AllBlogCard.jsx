@@ -1,9 +1,17 @@
 import React from 'react';
 import { FaPenNib } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const AllBlogCard = ({ category }) => {
-    console.log(category)
+    // console.log(category)
     const {_id, title, date, category_name, country_name,  description, image} = category;
+
+
+    const handleDetailBtn = _id => {
+       console.log('hello')
+    }
+
+
     return (
         <div className=''>
             <div className="card bg-base-100 shadow-xl border">
@@ -20,7 +28,7 @@ const AllBlogCard = ({ category }) => {
                     </div>
 
                 </div>
-                <div className="card-body">
+                <div className="card-body py-6">
                     <h2 className="card-title">{category_name}</h2>
                     <h5 className="font-semibold">
                        {title}
@@ -29,7 +37,10 @@ const AllBlogCard = ({ category }) => {
 
                     <div className="flex gap-2">
                         <button className='btn bg-blue-700 text-white hover:bg-black '>More Details</button>
-                        <button className='btn  btn-outline btn-primary hover:btn-black '>wishlist</button>
+
+                        {/* <Link to={`/wishlist/${_id}`}><button className="btn  btn-outline btn-primary hover:btn-black">wishlist</button></Link> */}
+
+                        <button onClick={() => handleDetailBtn (_id)} className='btn  btn-outline btn-primary hover:btn-black '>wishlist</button>
                     </div>
                 </div>
                 <figure><img src={image} alt="Shoes" /></figure>

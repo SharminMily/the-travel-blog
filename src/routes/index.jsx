@@ -25,11 +25,13 @@ const routes = createBrowserRouter([
         },
         {
           path: "allBlogs",
-          element: <AllBlogs></AllBlogs>
+          element: <AllBlogs></AllBlogs>,
+          // loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.id}`)
         },
         {
-          path: "wishList",
-          element: <Wishlist></Wishlist>
+          path: "wishList/:id",
+          element: <Wishlist></Wishlist>,
+          loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.id}`)
         },
       ]
     },
