@@ -9,7 +9,7 @@ const AddBlog = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('https://travel-blog-server-mnqvyktg4-sharminmily.vercel.app/category')
+        fetch('https://travel-blog-server-c0raz9g95-sharminmily.vercel.app/allData')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, []);

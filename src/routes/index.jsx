@@ -28,12 +28,12 @@ const routes = createBrowserRouter([
       {
         path: "allBlogs",
         element: <PrivateRouter><AllBlogs></AllBlogs></PrivateRouter>,
-        // loader: ({ params }) => fetch(`https://travel-blog-server-mnqvyktg4-sharminmily.vercel.app/alldata/${params.id}`)
+        // loader: ({ params }) => fetch(`https://travel-blog-server-c0raz9g95-sharminmily.vercel.app/alldata/${params.id}`)
       },
       {
         path: "wishList",
         element: <PrivateRouter><Wishlist></Wishlist></PrivateRouter>,
-        // loader: ({ params }) => fetch(`https://travel-blog-server-mnqvyktg4-sharminmily.vercel.app/alldata/${params.id}`)
+        // loader: ({ params }) => fetch(`https://travel-blog-server-c0raz9g95-sharminmily.vercel.app/alldata/${params.id}`)
       },
       {
         path: "featureBlog",
