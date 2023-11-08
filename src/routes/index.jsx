@@ -12,43 +12,43 @@ import PrivateRouter from "../page/PrivateRouter/PrivateRouter";
 
 
 const routes = createBrowserRouter([
-    {
-      path: "/",
-      element: <App></App>,
-      errorElement: <ErrorPage></ErrorPage>,
-      children: [
-        {
-         index: true,
-          element: <Home></Home>
-        },
-        {
-          path: "addBlog",
-          element: <PrivateRouter><AddBlog></AddBlog></PrivateRouter>
-        },
-        {
-          path: "allBlogs",
-          element: <PrivateRouter><AllBlogs></AllBlogs></PrivateRouter>,
-          // loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.id}`)
-        },
-        {
-          path: "wishList",
-          element: <PrivateRouter><Wishlist></Wishlist></PrivateRouter>,
-          // loader: ({ params }) => fetch(`http://localhost:5000/alldata/${params.id}`)
-        },
-        {
-          path: "featureBlog",
-          element: <FeatureBlog></FeatureBlog>
-        },
-      ]
-    },
-    {
-      path: "/login",
-      element: <Login></Login>
-    },
-    {
-      path: "/register",
-      element: <Register></Register>
-    },
-  ]);
+  {
+    path: "/",
+    element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        index: true,
+        element: <Home></Home>
+      },
+      {
+        path: "addBlog",
+        element: <PrivateRouter><AddBlog></AddBlog></PrivateRouter>
+      },
+      {
+        path: "allBlogs",
+        element: <PrivateRouter><AllBlogs></AllBlogs></PrivateRouter>,
+        // loader: ({ params }) => fetch(`https://travel-blog-server-mnqvyktg4-sharminmily.vercel.app/alldata/${params.id}`)
+      },
+      {
+        path: "wishList",
+        element: <PrivateRouter><Wishlist></Wishlist></PrivateRouter>,
+        // loader: ({ params }) => fetch(`https://travel-blog-server-mnqvyktg4-sharminmily.vercel.app/alldata/${params.id}`)
+      },
+      {
+        path: "featureBlog",
+        element: <FeatureBlog></FeatureBlog>
+      },
+    ]
+  },
+  {
+    path: "/login",
+    element: <Login></Login>
+  },
+  {
+    path: "/register",
+    element: <Register></Register>
+  },
+]);
 
-  export default routes;
+export default routes;

@@ -5,7 +5,7 @@ const RecentBog = () => {
     const [allData, setAllData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/alldata')
+        fetch('https://travel-blog-server-mnqvyktg4-sharminmily.vercel.app/alldata')
             .then(res => res.json())
             .then(data => setAllData(data))
     }, []);
@@ -18,7 +18,7 @@ const RecentBog = () => {
                 <br></br> Explore the diverse cuisine of a particular country or region, detailing unique dishes, food markets, and the cultural </p>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-8 gap-6 items-center'>
                 {
-                    allData.slice(0,6).map(category => <AllBlogCard key={category._id} category={category}></AllBlogCard >)
+                    allData.slice(0, 6).map(category => <AllBlogCard key={category._id} category={category}></AllBlogCard >)
                 }
 
             </div>

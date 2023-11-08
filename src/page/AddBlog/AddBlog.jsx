@@ -4,12 +4,12 @@ import AddBlogCard from './AddBlogCard';
 
 
 const AddBlog = () => {
- 
+
 
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/alldata')
+        fetch('https://travel-blog-server-mnqvyktg4-sharminmily.vercel.app/category')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, []);
