@@ -11,11 +11,11 @@ const Home = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('https://travel-blog-server-c0raz9g95-sharminmily.vercel.app/category')
+        fetch('https://travel-blog-server.vercel.app/category')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, []);
-    console.log(categories)
+    // console.log(categories)
 
 
 

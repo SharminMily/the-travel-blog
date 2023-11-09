@@ -22,21 +22,21 @@ const routes = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: "addBlog",
+        path: "/addBlog",
         element: <PrivateRouter><AddBlog></AddBlog></PrivateRouter>
       },
       {
-        path: "allBlogs",
+        path: "/allBlogs",
         element: <PrivateRouter><AllBlogs></AllBlogs></PrivateRouter>,
-        // loader: ({ params }) => fetch(`https://travel-blog-server-c0raz9g95-sharminmily.vercel.app/alldata/${params.id}`)
+        // loader: ({ params }) => fetch(`https://travel-blog-server-di4i29p2x-sharminmily.vercel.app/alldata/${params.id}`)
       },
       {
-        path: "wishList",
+        path: "/wishList",
         element: <PrivateRouter><Wishlist></Wishlist></PrivateRouter>,
-        // loader: ({ params }) => fetch(`https://travel-blog-server-c0raz9g95-sharminmily.vercel.app/alldata/${params.id}`)
+        // loader: ({ params }) => fetch(`https://travel-blog-server-di4i29p2x-sharminmily.vercel.app/alldata/${params.id}`)
       },
       {
-        path: "featureBlog",
+        path: "/featureBlog",
         element: <FeatureBlog></FeatureBlog>
       },
     ]
