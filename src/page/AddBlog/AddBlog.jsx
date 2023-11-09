@@ -12,10 +12,10 @@ const AddBlog = () => {
 
     fetch('https://travel-blog-server.vercel.app/allData')
     .then(res => res.json())
-    .then(data => setBlogs(data))
+    .then(data => console.log(data))
     }, []);
 
-   console.log(setBlogs)
+//    console.log(setBlogs)
 
 
 
