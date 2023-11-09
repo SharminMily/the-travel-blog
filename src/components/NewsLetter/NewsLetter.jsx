@@ -1,6 +1,20 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 
 const NewsLetter = () => {
+
+
+    const handleSubscribe = (e) => {
+        e.preventDefault()      
+        const email = e.target.email.value        
+        const password = e.target.password.value
+        console.log('hello', email, password)
+        toast.success('Successfully Subscribe!')
+    }
+
+
+
+
     return (
         <div className='my-16 w-full max-w-[1200px] mx-auto'>
             <h1 className="text-center text-4xl text-blue-700 font-bold"> News Letter</h1>
@@ -13,24 +27,24 @@ const NewsLetter = () => {
                         <p className="py-6">New York City, the city that never sleeps, offers an array of experiences from <br /> Broadway shows to iconic landmarks like the Statue of Liberty.</p>
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form className="card-body">
+                        <form onClick={handleSubscribe} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" placeholder="email" className="input input-bordered" required />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" placeholder="password" className="input input-bordered" required />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">subscribe</button>
+                                <button type='submit' className="btn btn-primary">subscribe</button>
                             </div>
                         </form>
                     </div>
