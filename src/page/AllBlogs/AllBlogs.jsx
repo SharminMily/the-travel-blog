@@ -5,7 +5,7 @@ const AllBlogs = () => {
     const [allData, setAllData] = useState([]);
 
     useEffect(() => {
-        fetch('https://travel-blog-server.vercel.app/allData')
+        fetch('https://travel-blog-server.vercel.app/category/:category_name')
             .then(res => res.json())
             .then(data => setAllData(data))
     }, []);

@@ -14,7 +14,7 @@ const MainLayout = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* Navbar */}
-                <div className="w-full navbar bg-blue-700 text-white">
+                <div className="w-full navbar bg-blue-800 text-white">
                     <div className=" w-full max-w-[1200px] mx-auto">
                         <div className="">
                             <div className="flex-none lg:hidden">

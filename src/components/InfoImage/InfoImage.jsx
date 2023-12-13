@@ -19,7 +19,7 @@ const InfoImage = () => {
                             <p className='pb-6'>
                             Picture crystal-clear waters glistening under the sun, meandering through lush forests, or standing in awe of majestic mountains standing tall against the horizon. These blogs narrate tales of exploring hidden gems, witnessing diverse wildlife, and connecting with the Earth's raw, unaltered beauty.
                             </p>
-                        <button className="btn btn-primary">More details</button>
+                        <button className="btn className='btn mt-2 shadow-lg shadow-slate-600 bg-blue-700 normal-case hover:bg-blue-800 text-xl text-white">More details</button>
                     </div>
                 </div>
             </div>

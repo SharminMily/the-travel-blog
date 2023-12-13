@@ -11,10 +11,14 @@ const Navbar = () => {
                 {/* Navbar menu content here */}
                 <NavLink to="/"
                     className={({ isActive }) => isActive ? 'btn bg-black hover:bg-black ml-2 text-white btn-sm' : 'btn btn-white btn-sm normal-case ml-'}>Home</NavLink>
-                <NavLink to="/addBlog"
-                    className={({ isActive }) => isActive ? 'btn bg-black hover:bg-black ml-2 text-white btn-sm' : 'btn btn-white btn-sm normal-case ml-2'}>Add Blog</NavLink>
+
+                {/* <NavLink to="/category"
+                    className={({ isActive }) => isActive ? 'btn bg-black hover:bg-black ml-2 text-white btn-sm' : 'btn btn-white btn-sm normal-case ml-2'}>category</NavLink>      */}
+
                 <NavLink to="/allBlogs"
-                    className={({ isActive }) => isActive ? 'btn bg-black hover:bg-black ml-2 text-white btn-sm' : 'btn btn-white btn-sm normal-case ml-2'}>All Blogs</NavLink>
+                    className={({ isActive }) => isActive ? 'btn bg-black hover:bg-black ml-2 text-white btn-sm' : 'btn btn-white btn-sm normal-case ml-2'}>All Blogs</NavLink>            
+
+                          
                 <NavLink to="/featureBlog"
                     className={({ isActive }) => isActive ? 'btn bg-black hover:bg-black ml-2 text-white btn-sm' : 'btn btn-white btn-sm normal-case ml-2'}>Feature Blog</NavLink>
                 <NavLink to="/wishList"

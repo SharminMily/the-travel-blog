@@ -9,6 +9,8 @@ import Home from "../page/Home";
 import ErrorPage from "../page/ErrorPage";
 import FeatureBlog from "../page/FeatureBlog/FeatureBlog";
 import PrivateRouter from "../page/PrivateRouter/PrivateRouter";
+import Category from "../page/Category/Category";
+import CategoryTabs from "../page/Category/CategoryTabs";
 
 
 const routes = createBrowserRouter([
@@ -21,15 +23,26 @@ const routes = createBrowserRouter([
         index: true,
         element: <Home></Home>
       },
+
       {
-        path: "/addBlog",
-        element: <PrivateRouter><AddBlog></AddBlog></PrivateRouter>
+        path: "/category",
+        element: <Category></Category>,
       },
       {
         path: "/allBlogs",
-        element: <PrivateRouter><AllBlogs></AllBlogs></PrivateRouter>,
-        // loader: ({ params }) => fetch(`https://travel-blog-server-di4i29p2x-sharminmily.vercel.app/alldata/${params.id}`)
+        element: <PrivateRouter><CategoryTabs></CategoryTabs></PrivateRouter>,
       },
+      // {
+      //   path: "/addBlog/:category_name",
+      //   element: <AddBlog></AddBlog>,
+      //   // loader: ({ params }) => fetch(`travel-blog-server.vercel.app/category/${params.category_name}`)
+      // },
+
+      // {
+      //   path: "/allBlogs",
+      //   element: <PrivateRouter><AllBlogs></AllBlogs></PrivateRouter>,
+      //   // loader: ({ params }) => fetch(`https://travel-blog-server-di4i29p2x-sharminmily.vercel.app/alldata/${params.id}`)
+      // },
       {
         path: "/wishList",
         element: <PrivateRouter><Wishlist></Wishlist></PrivateRouter>,
