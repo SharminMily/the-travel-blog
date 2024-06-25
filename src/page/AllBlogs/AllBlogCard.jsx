@@ -14,36 +14,36 @@ const AllBlogCard = ({ category }) => {
 
     return (
         <div className=''>
-            <div className="card bg-base-100 shadow-xl border">
-                <div className='flex items-center justify-between border-blue-700 p-2 m-4 mb-0 gap-8 border-b-2 border rounded'>
+            <div className="card mb-6 border-2 bg-base-200 shadow-lg border-[#106888]">
+                <div className='flex bg-[#106888] text-white items-center justify-between rounded-t-xl p-2 m- mb-0 gap-8 border-b-0 '>
                     <div className="rounded">
                         <img className='w-10 rounded-full' src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=8" alt="" />
                     </div>
                     <div className="">
                         <h1 className='font-semibold'>Ayesh Piho Shen</h1>
-                        <p className='text-gray-600'>{date}</p>
+                        <p className='text-gray-300'>{new Date(date).toDateString()}</p>
                     </div>
                     <div className='flex text-end items-end justify-end'>
                         <FaPenNib />
                     </div>
 
                 </div>
-                <div className="card-body py-6">
-                    <h2 className="card-title">{category_name}</h2>
-                    <h5 className="font-semibold">
+                <div className="card-body py-1">
+                    <h1 className="card-title text-2xl ">{category_name}</h1>
+                    <h2 className="font-semibold text-lg">
                         {title}
-                    </h5>
-                    <p>{description}</p>
+                    </h2>
+                    <p className='pb-0'>{description}</p>
 
                     <div className="flex gap-2">
-                        <button onClick={() => document.getElementById(_id).showModal()} className='btn bg-blue-700 text-white hover:bg-black '>More Details</button>
+                        <button onClick={() => document.getElementById(_id).showModal()} className='btn text-white bg-gradient-to-r from-[#106888] via-cyan-500 to-[#106888] hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 '>More Details</button>
 
                         {/* <Link to={`/wishlist/${_id}`}><button className="btn  btn-outline btn-primary hover:btn-black">wishlist</button></Link> */}
 
-                        <button onClick={() => handleDetailBtn(_id)} className='btn  btn-outline btn-primary hover:btn-black '>wishlist</button>
+                        <button onClick={() => handleDetailBtn(_id)} className='btn   focus:outline font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2  btn-outline  '>wishlist</button>
                     </div>
                 </div>
-                <figure><img src={image} alt="Shoes" /></figure>
+                <figure><img className='h-80' src={image} alt="Shoes" /></figure>
             </div>
 
             {

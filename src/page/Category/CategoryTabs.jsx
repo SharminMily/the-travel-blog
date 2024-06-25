@@ -19,23 +19,23 @@ const CategoryTabs = () => {
     return (
         <div>
             <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                <div className='flex justify-center gap-2 mt-16'>
-                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-blue-600 normal-case hover:bg-blue-800 text-xl text-white'>
+                <div className='grid lg:grid-cols-6 grid-cols-3 gap-2 md:mx-28  mt-16'>
+                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-[#106888] normal-case hover:bg-blue-950 text-lg text-white'>
                         America</button></Tab>
 
-                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-blue-600 normal-case hover:bg-blue-800 text-xl text-white'>
+                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-[#106888] normal-case hover:bg-blue-950 text-lg text-white'>
                         Switzerland</button></Tab>
 
-                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-blue-600 normal-case hover:bg-blue-800 text-xl text-white'>
+                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-[#106888] normal-case hover:bg-blue-950 text-lg text-white'>
                         Australia</button></Tab>
 
-                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-blue-600 normal-case hover:bg-blue-800 text-xl text-white'>
+                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-[#106888] normal-case hover:bg-blue-950 text-base text-white'>
                         Saudi Arabia</button></Tab>
 
-                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-blue-600 normal-case hover:bg-blue-800 text-xl text-white'>
+                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-[#106888] normal-case hover:bg-blue-950 text-lg text-white'>
                         France</button></Tab>
 
-                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-blue-600 normal-case hover:bg-blue-800 text-xl text-white'>
+                    <Tab><button className='btn shadow-lg shadow-slate-600 bg-[#106888] normal-case hover:bg-blue-950 text-xl text-white'>
                         China</button></Tab>
                 </div>
                 <TabPanel>

@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div className="">
-            <footer className="footer bg-blue-800">
+            <footer className="footer bg-[#106888] ">
                 <div className="footer pt-8 pb-6 text-center flex justify-around text-white">
                     <div>
                         <img className='md:w-52 w-32' src="https://i.ibb.co/NLNPVzG/logo-removebg-preview.png" alt="" />
@@ -18,9 +18,9 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <div className="footer footer-center md:p-4 pb-4 bg-blue-800 text-white">
+            <div className="footer footer-center md:p-4 pb-4 bg-[#015675] text-white">
                 <aside>
-                    <p>Copyright © 2023 - All right reserved by The Travel Blog.</p>
+                    <p>Copyright © 2024 - All right reserved by The Travel Blog.</p>
                 </aside>
             </div>
 

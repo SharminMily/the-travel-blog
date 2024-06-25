@@ -8,13 +8,12 @@ const MainLayout = ({ children }) => {
     const { user, logout, loader } = useAuth();
     console.log(user)
 
-
     return (
         <div className="drawer">
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 {/* Navbar */}
-                <div className="w-full navbar bg-blue-800 text-white">
+                <div className="w-full sticky top-0  z-50 navbar bg-[#106888] text-white">
                     <div className=" w-full max-w-[1200px] mx-auto">
                         <div className="">
                             <div className="flex-none lg:hidden">

@@ -1,0 +1,156 @@
+
+.animation{
+	margin: 0;
+	height: 15vh;
+	display: grid;
+	place-items: center;    
+}
+
+.btnn {
+	position: relative;
+	padding: 18px 25px;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
+	color: #d8dae2;
+    background: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	font: 700 25px consolas;
+	overflow: hidden;
+    border-radius: 2px;
+}
+
+.btnn span:nth-child(1) {
+	position: absolute;  
+    padding: 100px; 
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(to right, #171618, #5fa4dd);
+	animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1 {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+.btnn span:nth-child(2) {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 3px;
+	background: linear-gradient(to bottom, #171618, #5fa4dd);
+	animation: animate2 2s linear infinite;
+	animation-delay: 1s;
+}
+@keyframes animate2 {
+	0% {
+		transform: translateY(-100%);
+	}
+	100% {
+		transform: translateY(100%);
+	}
+}
+
+.btnn span:nth-child(3) {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 3px;
+	background: linear-gradient(to left, #171618, #5fa4dd);
+	animation: animate3 2s linear infinite;
+}
+
+@keyframes animate3 {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+.btnn span:nth-child(4) {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 3px;
+	/* background: linear-gradient(to top, #304757 , #344553 , #5fa4dd ); */
+	animation: animate4 2s linear infinite;
+	animation-delay: 3s;
+}
+
+@keyframes animate4 {
+	0% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(-100%);
+	}
+}
+
+/* country */
+/* .animations{
+	margin: 0;	
+	padding: 10;
+	place-items: center;    
+} */
+.country{
+	position: relative;	
+	background-color: #02272c;
+	box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);	
+	width: 300px;
+	height: 300px;	
+	border-radius: 20px;
+	overflow: hidden;		
+} 
+
+.ttt{
+	z-index: 2;
+}
+.tts{
+	z-index: 2;
+	text-shadow: 2px 2px black;
+}
+
+.country::before{
+	content: '';
+	position: absolute;			
+	width: 120px;
+	height: 190%;	
+	background-color: white;	
+	animation: rotate 4s linear infinite;
+	top: -120px;
+}
+.country::after{
+	content: '';
+	position: absolute;	
+	
+	background-color: rgb(34, 98, 134);
+	/* animation: animate 4s linear infinite; */
+	border-radius: 15px;
+	inset: 5px;
+}
+
+@keyframes rotate {
+	from{
+		transform: rotate(0deg);
+	}	
+	to{
+		transform: rotate(360deg);
+	}
+
+}
+
+
+
+
